@@ -1,0 +1,6 @@
+*.txt
+*.pdf
+__pycache__
+*.csv
+glove
+.ipynb_checkpoints

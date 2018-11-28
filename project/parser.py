@@ -1,7 +1,6 @@
 # imports
 import codecs
 import json
-#from nltk.parse.corenlp import CoreNLPParser
 from nltk.tokenize import word_tokenize
 import re
 import csv
@@ -61,13 +60,30 @@ def split_into_sentences(text):
     sentences = [s.strip() for s in sentences]
     return sentences
 
-
-def unify_hyphens(text):
-    text = text.replace('\xad', '-')
-    text = text.replace('\u00ad', '-')
-    text = text.replace('\N{SOFT HYPHEN}', '-')
-    text = re.sub('([^\s])- ', "\\1-",text)
+def normalize_string(text):
+    text = re.sub("[^ ]+%", ' ', text)
+    text = re.sub('\\\\\\\"', ' ', text)
+    text = re.sub(r"[^a-zA-Z0-9()/;:#,.?!&=~\-@\"\' ]+", ' ', text)
+    text = re.sub("\s\s+", " ", text)
+    # remove hyphens
+    text = re.sub('\xad', '-', text)
+    text = re.sub('\u00ad', '-', text)
+    text = re.sub('\N{SOFT HYPHEN}', '-', text)
+    text = re.sub(r'([^\s])- ', "\\1", text)
+    text = re.sub(r'\-', ' ', text)
+    text = re.sub("\s\s+", " ", text)
+    # remove quotes
+    text = re.sub('\"', ' ', text)
+    text = re.sub("\s\s+", " ", text)
+    # etc
+    text = re.sub(r"(?!\([1-2][0-9][0-9][0-9] to [1-2][0-9][0-9][0-9]\))\([^\)a-zA-Z]+to[^\)a-zA-Z]+\)", ' ', text) #(241234 to 124323)
+    text = re.sub(r"\([0-9]+\.[0-9]+ in [0-9]+\.[0-9]+\)", ' ', text) #(4.3-1.2)
+    text = re.sub(r"(?!\([1-2][0-9][0-9][0-9]\))(?!\([1-2][0-9][0-9][0-9] [^\)]+\))\([0-9\.\,\+ ]+\)", ' ', text)
+    text = re.sub(r"(?! [1-2][0-9][0-9][0-9] ) [0-9][0-9\.\,]+[0-9] ", ' ', text)
+    text = re.sub(r" [0-9]+\.[0-9]+", ' ', text)
+    text = re.sub("\s\s+", " ", text)
     return text
+
 
 
 def label_substring(sentence, mention, label_sequence, data_set_id):
@@ -154,7 +170,7 @@ def extract_formatted_data_test(formatted_publications, data_set_mention_info, p
                 labeled = 'Y'
             output.append({'publication_id': publication_id,
                            'sentence': sentence,
-                           'label_sequence': label_sequence,
+                           'label_sequence': sub_label_sequence,
                            'labeled': labeled})
         for l in label_sequence:
             if 'B' in l:
@@ -181,13 +197,14 @@ def train_set_parser():
             formatted_mention_list = []
             for mention in mention_list:
                 mention.encode('ascii','ignore')
-                mention = unify_hyphens(mention)
-                mention = re.sub('\\\\\\\"', '\"', mention)
+                mention = normalize_string(mention)
                 sentences = split_into_sentences(mention)
                 words = []
                 for sentence in sentences:
                     words += word_tokenize(sentence)
-                formatted_mention_list.append(words)
+                words = [w for w in words if len(w)<20]
+                if len(words) > 0:
+                    formatted_mention_list.append(words)
             if publication_id in citation_dict:
                 citation_dict[publication_id].append([data_set_id, formatted_mention_list])
             else:
@@ -208,8 +225,6 @@ def train_set_parser():
         for publication_info in tqdm(publication_list, total=len(publication_list)):
             # get information on publication:
             publication_id = publication_info.get( "publication_id", None )
-            title = publication_info.get( "title", None )
-            title.encode('ascii','ignore')
             text_file_name = publication_info.get( "text_file_name", None )
             # get raw text
             raw_text = ''
@@ -218,16 +233,17 @@ def train_set_parser():
                 for line in txt_file:
                     stripped_line = line.strip()
                     raw_text += ' ' + stripped_line
-                    if len(stripped_line.split()) <= 7:
+                    if len(stripped_line.split()) <= 5:
                         raw_text += '<stop>'    # marking for sentence boundary in split_into_sentences() function
             raw_text.encode('ascii','ignore')
-            raw_text = unify_hyphens(raw_text)
+            raw_text = normalize_string(raw_text)
             # add to formatted_publications dictionary
             formatted_text_list = []
             sentences = split_into_sentences(raw_text)
             for sentence in sentences:
                 words = word_tokenize(sentence)
-                if len(words) >= 5:
+                words = [w for w in words if len(w)<20]
+                if len(words) >= 10 and len(words) <= 50:
                     formatted_text_list.append(words)
             formatted_publications[publication_id] = formatted_text_list 
     # tag mentions in publication text and write in csv file
@@ -267,27 +283,26 @@ def test_set_parser(data_set_path, output_filename):
             date = data_set_info.get( "date", None )
             date.encode('ascii','ignore')
             date = date[:10]
-            date = unify_hyphens(date)
             if 'None' in date:
                 date = '1800-01-01'
             date = int(date[:4]) * 12 * 31 + int(date[5:7]) * 31 + int(date[8:10])
             mention_list = data_set_info.get( "mention_list", None )
             formatted_mention_list = []
-            name = unify_hyphens(name)
-            name = re.sub('\\\\\\\"', '\"', name)
+            name = normalize_string(name)
             name_words = word_tokenize(name)
             formatted_mention_list.append([name_words, list_to_string((name_words))])
             for mention in mention_list:
                 mention.encode('ascii','ignore')
-                mention = unify_hyphens(mention)
-                mention = re.sub('\\\\\\\"', '\"', mention)
+                mention = normalize_string(mention).strip()
+                mention = re.sub("\s\s+", " ", mention)
+                if all(c.islower() for c in mention) and len(mention.split()) <= 2:
+                    continue    # to avoid pronoun mentions like 'data', 'time'
                 sentences = split_into_sentences(mention)
                 words = []
                 for sentence in sentences:
                     words += word_tokenize(sentence)
-                if all(c.islower() for c in sentence) and len(words) <= 2:
-                    continue    # to avoid pronoun mentions like 'data', 'time'
-                else:
+                words = [w for w in words if len(w)<20]
+                if len(words) > 0:
                     formatted_mention_list.append([words, list_to_string(words)])
             data_set_mention_info.append([date, data_set_id, formatted_mention_list])
     data_set_mention_info.sort(key=lambda x: int(x[0]), reverse=True)
@@ -314,7 +329,6 @@ def test_set_parser(data_set_path, output_filename):
             else:
                 pub_date = '2200-01-01'
             pub_date.encode('ascii', 'ignore')
-            pub_date = unify_hyphens(pub_date)
             pub_date = int(pub_date[:4]) * 12 * 31 + int(pub_date[5:7]) * 31 + int(pub_date[8:10])
             # get raw text
             raw_text = ''
@@ -323,17 +337,18 @@ def test_set_parser(data_set_path, output_filename):
                 for line in txt_file:
                     stripped_line = line.strip()
                     raw_text += ' ' + stripped_line
-                    if len(stripped_line.split()) <= 7:
+                    if len(stripped_line.split()) <= 5:
                         raw_text += '<stop>'    # marking for sentence boundary in split_into_sentences() function
             raw_text.encode('ascii','ignore')
-            raw_text = unify_hyphens(raw_text)
+            raw_text = normalize_string(raw_text)
             # add to formatted_publications dictionary
             formatted_text_list = []
             chopped_raw_text = ''
             sentences = split_into_sentences(raw_text)
             for sentence in sentences:
                 words = word_tokenize(sentence)
-                if len(words) >= 5:
+                words = [w for w in words if len(w)<20]
+                if len(words) >= 10 and len(words) <= 50:
                     formatted_text_list.append(words)
                     chopped_raw_text += ' ' + list_to_string(words)
             formatted_publications[publication_id] = [formatted_text_list, chopped_raw_text.strip()] 

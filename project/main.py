@@ -41,40 +41,39 @@ with open('./formatted-data/rcc_corpus_train.csv') as f:
         assert (len(word_seq) == len(label_seq))    # [2]는 space로 띄여진 sentence
         raw_train_set.append([word_seq, label_seq])
 
-raw_dev_set = []
-with open('./formatted-data/rcc_corpus_dev.csv') as f:
-    lines = csv.reader(f)
-    next(lines)
-    for line in lines:
-        word_seq = ast.literal_eval(line[1])
-        label_seq = ast.literal_eval(line[2])   # 0,1 label로 이루어진 sequence
-        assert (len(word_seq) == len(label_seq))    # [2]는 space로 띄여진 sentence
-        raw_dev_set.append([word_seq, label_seq])
+# raw_dev_set = []
+# with open('./formatted-data/rcc_corpus_dev.csv') as f:
+#     lines = csv.reader(f)
+#     next(lines)
+#     for line in lines:
+#         word_seq = ast.literal_eval(line[1])
+#         label_seq = ast.literal_eval(line[2])   # 0,1 label로 이루어진 sequence
+#         assert (len(word_seq) == len(label_seq))    # [2]는 space로 띄여진 sentence
+#         raw_dev_set.append([word_seq, label_seq])
 
 
-print('size of training set, development set: ', len(raw_train_set), len(raw_dev_set))
+print('size of training set, validation set: ', len(raw_train_set))
+#print('size of training set, validation set: ', len(raw_train_set), len(raw_dev_set))
 
-print(raw_train_set[100])
 
-
-"""
-2. Data preparation
-"""
-'''
-2. 1
-get vocabulary and glove embeddings in raw dataset 
-'''
-# vocab is a set of words
-vocab = get_vocab(raw_train_set)
-# two dictionaries. <PAD>: 0, <UNK>: 1
-word2idx, idx2word = get_word2idx_idx2word(vocab)
-# glove_embeddings a nn.Embeddings
-glove_embeddings = get_embedding_matrix(word2idx, idx2word, normalization=False)    # glove_embeddings[word] = 해당 word의 embedding vector
-# elmo_embeddings
-elmos_train_vua = None
-elmos_val_vua = None
-#elmos_train_vua = h5py.File('../elmo/VUA_train.hdf5', 'r')
-#elmos_val_vua = h5py.File('../elmo/VUA_val.hdf5', 'r')
+# """
+# 2. Data preparation
+# """
+# '''
+# 2. 1
+# get vocabulary and glove embeddings in raw dataset 
+# '''
+# # vocab is a set of words
+# vocab = get_vocab(raw_train_vua)
+# # two dictionaries. <PAD>: 0, <UNK>: 1
+# word2idx, idx2word = get_word2idx_idx2word(vocab)
+# # glove_embeddings a nn.Embeddings
+# glove_embeddings = get_embedding_matrix(word2idx, idx2word, normalization=False)    # glove_embeddings[word] = 해당 word의 embedding vector
+# # elmo_embeddings
+# elmos_train_vua = None
+# elmos_val_vua = None
+# #elmos_train_vua = h5py.File('../elmo/VUA_train.hdf5', 'r')
+# #elmos_val_vua = h5py.File('../elmo/VUA_val.hdf5', 'r')
 
 # '''
 # 2. 2

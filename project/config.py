@@ -18,41 +18,34 @@ def get_parser():
     parser.register('type', 'bool', str2bool)
 
     basic_group = parser.add_argument_group('basics')
-    basic_group.add_argument('--debug', type="bool", default=False,
+    basic_group.add_argument('--debug', type="bool", default=True,
                              help='whether to activate debug mode \
                              (default: False)')
-    basic_group.add_argument('--model', type=str, default='g',
+    basic_group.add_argument('--model', type=str, default='hier',
                              choices=['g', 'flat', 'hier'],
-                             help='type of model (default: g)')
+                             help='type of model (default: hier)')
     basic_group.add_argument('--random_seed', type=int, default=0,
                              help='Random seed (default: 0)')
 
     data = parser.add_argument_group('data')
-    data.add_argument('--prefix', type=str, default=None,
+    data.add_argument('--prefix', type=str, default='./saveFile',
                       help='save file prefix (default: None)')
-    data.add_argument('--data_file', type=str, default=None,
-                      help='path to training data file (default: None)')
-    data.add_argument('--unlabel_file', type=str, default=None,
-                      help='path to unlabeled file (default: None)')
-    data.add_argument('--vocab_file', type=str, default=None,
-                      help='path to vocab file (default: None)')
-    data.add_argument('--tag_file', type=str, default=None,
-                      help='path to tag file (default: None)')
-    data.add_argument('--embed_file', type=str, default=None,
+    data.add_argument('--data_file', type=str, default='./formatted-data/rcc.data',
+                      help='path to training data file (default: ./formatted-data/rcc.data)')
+    data.add_argument('--vocab_file', type=str, default='./formatted-data/vocab',
+                      help='path to vocab file (default: ./formatted-data/vocab)')
+    data.add_argument('--tag_file', type=str, default='./formatted-data/tagfile',
+                      help='path to tag file (default: ./formatted-data/tagfile)')
+    data.add_argument('--embed_file', type=str, default='./glove/glove840B300d.txt',
                       help='path to embedding file (default: None)')
-    data.add_argument('--use_unlabel', type="bool", default=None,
-                      help='whether to use unlabeled data (default: None)')
     data.add_argument('--prior_file', type=str, default=None,
                       help='path to saved prior file (default: None)')
 
-    data.add_argument('--embed_type', type=str, default='twitter',
-                      choices=['glove', 'twitter', 'ud'],
-                      help='types of embedding file (default: twitter)')
 
     config = parser.add_argument_group('configs')
     config.add_argument('-edim', '--embed_dim',
-                        dest='edim', type=int, default=100,
-                        help='embedding dimension (default: 100)')
+                        dest='edim', type=int, default=300,
+                        help='embedding dimension (default: 300)')
     config.add_argument('-rtype', '--rnn_type',
                         dest='rtype', type=str, default='gru',
                         choices=['gru', 'lstm', 'rnn'],
@@ -118,16 +111,9 @@ def get_parser():
                        help='number of iteration (default: 30000)')
     train.add_argument('--batch_size', type=int, default=10,
                        help='labeled data batch size (default: 10)')
-    train.add_argument('--unlabel_batch_size', type=int, default=10,
-                       help='unlabeled data batch size (default: 10)')
-    train.add_argument('--vocab_size', type=int, default=50000,
-                       help='maximum number of words in vocabulary \
-                       (default: 50000)')
-    config.add_argument('--char_vocab_size', type=int, default=300,
-                        help='character vocabulary size (default: 300)')
     train.add_argument('--train_emb', type="bool", default=False,
                        help='whether to train word embedding (default: False)')
-    train.add_argument('--save_prior', type="bool", default=False,
+    train.add_argument('--save_prior', type="bool", default=True,
                        help='whether to save trained prior (default: False)')
     train.add_argument('-lr', '--learning_rate',
                        dest='lr',
@@ -147,7 +133,7 @@ def get_parser():
     misc.add_argument('--eval_every', type=int, default=100,
                       help='evaluate model after \
                       this number of iterations (default: 100)')
-    misc.add_argument('--summarize', type="bool", default=False,
+    misc.add_argument('--summarize', type="bool", default=True,
                       help='whether to summarize training stats\
                       (default: False)')
     return parser

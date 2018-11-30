@@ -11,6 +11,7 @@ import pickle
 import argparse
 import logging
 import ast
+import itertools
 
 from sklearn.model_selection import train_test_split
 from collections import Counter
@@ -256,9 +257,17 @@ if __name__ == "__main__":
         fp.write('\n'.join(sorted(tag_counter.keys())))
     '''
     train_ids, dev_ids, train_sents, dev_sents, train_tags, dev_tags = \
-        train_test_split(train_set[0], train_set[1], train_set[2], test_size=args.ratio)
+       train_test_split(train_set[0], train_set[1], train_set[2], test_size=args.ratio)
     train_set = [train_ids, train_sents, train_tags]
     dev_set = [dev_ids, dev_sents, dev_tags]
+
+    tag_counter = Counter(list(itertools.chain.from_iterable(train_set[2])) +
+                          list(itertools.chain.from_iterable(dev_set[2])) +
+                          list(itertools.chain.from_iterable(test_set[2])))
+    print(tag_counter)
+    with open("./formatted-data/tagfile", "w", encoding='utf-8') as fp:
+        fp.write('\n'.join(sorted(tag_counter.keys())))
+
     logging.info("#train data: {}".format(len(train_set[0])))
     logging.info("#dev data: {}".format(len(dev_set[0])))
     logging.info("#test data: {}".format(len(test_set[0])))

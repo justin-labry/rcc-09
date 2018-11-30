@@ -5,3 +5,8 @@ __pycache__
 glove
 .ipynb_checkpoints
 *.data
+old-files
+tagfile
+vocab
+*.local
+saveFile

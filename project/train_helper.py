@@ -48,7 +48,7 @@ class tracker:
         """
         self.counter += count
         for name, value in named_values.items():
-            self.values[name] += value.data.cpu().numpy()[0] * count
+            self.values[name] += value.data.cpu().numpy().item() * count
 
     def summarize(self, output=""):
         if output:
@@ -84,7 +84,6 @@ class experiment:
         all_defaults = {}
         for key in vars(config):
             all_defaults[key] = get_parser().get_default(key)
-
         self.default_config = all_defaults
 
         if not config.debug:
@@ -100,7 +99,7 @@ class experiment:
         os.makedirs(self.experiment_dir, exist_ok=False)
 
     def _make_misc_dir(self):
-        os.makedirs(self.config.prior_file, exist_ok=True)
+        #os.makedirs(self.config.prior_file, exist_ok=True)
         os.makedirs(self.config.vocab_file, exist_ok=True)
 
     @property

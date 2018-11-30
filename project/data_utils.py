@@ -8,11 +8,12 @@ from collections import Counter
 from decorators import auto_init_args, lazy_execute
 from config import UNK_WORD_IDX, UNK_WORD, UNK_CHAR_IDX, \
     UNK_CHAR
+import itertools
 
 
 class data_holder:
     @auto_init_args
-    def __init__(self, train, dev, test, unlabel,
+    def __init__(self, train, dev, test,
                  tag_vocab, vocab, char_vocab):
         self.inv_vocab = {i: w for w, i in vocab.items()}
         self.inv_tag_vocab = {i: w for w, i in tag_vocab.items()}
@@ -23,26 +24,20 @@ class data_processor:
         self.expe = experiment
 
     def process(self):
-        fn = "vocab_" + str(self.expe.config.vocab_size)
+        fn = "vocab"
         vocab_file = os.path.join(self.expe.config.vocab_file, fn)
 
         self.expe.log.info("loading data from {} ...".format(
             self.expe.config.data_file))
         with open(self.expe.config.data_file, "rb+") as infile:
-            train_data, dev_data, test_data = pickle.load(infile)
+            train_data, dev_data, test_data, test_data_preprocessed = pickle.load(infile)
 
-        train_v_data = train_data[0]
-        unlabeled_data = None
-
-        if self.expe.config.use_unlabel:
-            unlabeled_data = self._load_sent(self.expe.config.unlabel_file)
-            train_v_data = unlabeled_data + train_data[0]
+        train_v_data = train_data[1]    # sentences
 
         W, vocab, char_vocab = \
             self._build_vocab_from_embedding(
-                train_v_data, dev_data[0] + test_data[0],
+                train_v_data, dev_data[1] + test_data[1],
                 self.expe.config.embed_file,
-                self.expe.config.vocab_size, self.expe.config.char_vocab_size,
                 file_name=vocab_file)
 
         tag_vocab = self._load_tag(self.expe.config.tag_file)
@@ -50,11 +45,11 @@ class data_processor:
         self.expe.log.info("tag vocab size: {}".format(len(tag_vocab)))
 
         train_data = self._label_to_idx(
-            train_data[0], train_data[1], vocab, char_vocab, tag_vocab)
+            train_data[0], train_data[1], train_data[2], vocab, char_vocab, tag_vocab)
         dev_data = self._label_to_idx(
-            dev_data[0], dev_data[1], vocab, char_vocab, tag_vocab)
+            train_data[0], dev_data[1], dev_data[2], vocab, char_vocab, tag_vocab)
         test_data = self._label_to_idx(
-            test_data[0], test_data[1], vocab, char_vocab, tag_vocab)
+            train_data[0], test_data[1], test_data[2], vocab, char_vocab, tag_vocab)
 
         def cal_stats(data):
             unk_count = 0
@@ -69,7 +64,8 @@ class data_processor:
             return (unk_count, total_count, unk_count / total_count), \
                 (len(leng), max(leng), min(leng), sum(leng) / len(leng))
 
-        train_unk_stats, train_len_stats = cal_stats(train_data[0])
+        self.expe.log.info("***** trainset info *****")
+        train_unk_stats, train_len_stats = cal_stats(train_data[1])
         self.expe.log.info("#train data: {}, max len: {}, "
                            "min len: {}, avg len: {:.2f}"
                            .format(*train_len_stats))
@@ -77,7 +73,8 @@ class data_processor:
         self.expe.log.info("#unk in train sentences: {}"
                            .format(train_unk_stats))
 
-        dev_unk_stats, dev_len_stats = cal_stats(dev_data[0])
+        self.expe.log.info("***** devset info *****")
+        dev_unk_stats, dev_len_stats = cal_stats(dev_data[1])
         self.expe.log.info("#dev data: {}, max len: {}, "
                            "min len: {}, avg len: {:.2f}"
                            .format(*dev_len_stats))
@@ -85,7 +82,8 @@ class data_processor:
         self.expe.log.info("#unk in dev sentences: {}"
                            .format(dev_unk_stats))
 
-        test_unk_stats, test_len_stats = cal_stats(test_data[0])
+        self.expe.log.info("***** testset info *****")
+        test_unk_stats, test_len_stats = cal_stats(test_data[1])
         self.expe.log.info("#test data: {}, max len: {}, "
                            "min len: {}, avg len: {:.2f}"
                            .format(*test_len_stats))
@@ -93,22 +91,10 @@ class data_processor:
         self.expe.log.info("#unk in test sentences: {}"
                            .format(test_unk_stats))
 
-        if self.expe.config.use_unlabel:
-            unlabeled_data = self._unlabel_to_idx(
-                unlabeled_data, vocab, char_vocab)
-            un_unk_stats, un_len_stats = cal_stats(unlabeled_data[0])
-            self.expe.log.info("#unlabeled data: {}, max len: {}, "
-                               "min len: {}, avg len: {:.2f}"
-                               .format(*un_len_stats))
-
-            self.expe.log.info("#unk in unlabeled sentences: {}"
-                               .format(un_unk_stats))
-
         data = data_holder(
             train=train_data,
             dev=dev_data,
             test=test_data,
-            unlabel=unlabeled_data,
             tag_vocab=tag_vocab,
             vocab=vocab,
             char_vocab=char_vocab)
@@ -133,51 +119,27 @@ class data_processor:
                     sents.append(words)
         return sents
 
-    def _label_to_idx(self, sentences, tags, vocab, char_vocab, tag_vocab):
+    def _label_to_idx(self, ids, sentences, tags, vocab, char_vocab, tag_vocab):
+        pub_id_holder = []
         sentence_holder = []
         sent_char_holder = []
         tag_holder = []
-        for sentence, tag in zip(sentences, tags):
+        for pub_id, sentence, tag in zip(ids, sentences, tags):
             chars = []
             words = []
             for w in sentence:
                 words.append(vocab.get(w, 0))
                 chars.append([char_vocab.get(c, 0) for c in w])
+            pub_id_holder.append(pub_id)
             sentence_holder.append(words)
             sent_char_holder.append(chars)
             tag_holder.append([tag_vocab[t] for t in tag])
+        self.expe.log.info("#ids: {}".format(len(pub_id_holder)))
         self.expe.log.info("#sent: {}".format(len(sentence_holder)))
-        self.expe.log.info("#word: {}".format(len(sum(sentence_holder, []))))
-        self.expe.log.info("#tag: {}".format(len(sum(tag_holder, []))))
-        return np.asarray(sentence_holder), np.asarray(sent_char_holder), \
-            np.asarray(tag_holder)
-
-    def _unlabel_to_idx(self, sentences, vocab, char_vocab):
-        sentence_holder = []
-        sent_char_holder = []
-        for sentence in sentences:
-            chars = []
-            words = []
-            for w in sentence:
-                words.append(vocab.get(w, 0))
-                chars.append([char_vocab.get(c, 0) for c in w])
-            sentence_holder.append(words)
-            sent_char_holder.append(chars)
-        self.expe.log.info("#sent: {}".format(len(sentence_holder)))
-        return np.asarray(sentence_holder), np.asarray(sent_char_holder)
-
-    def _load_twitter_embedding(self, path):
-        with open(path, 'r', encoding='utf8') as fp:
-            # word_vectors: word --> vector
-            word_vectors = {}
-            for line in fp:
-                line = line.strip("\n").split("\t")
-                word_vectors[line[0]] = np.array(
-                    list(map(float, line[1].split(" "))), dtype='float32')
-        vocab_embed = word_vectors.keys()
-        embed_dim = word_vectors[next(iter(vocab_embed))].shape[0]
-
-        return word_vectors, vocab_embed, embed_dim
+        self.expe.log.info("#word: {}".format(len(list(itertools.chain.from_iterable(sentence_holder)))))
+        self.expe.log.info("#tag: {}".format(len(list(itertools.chain.from_iterable(tag_holder)))))
+        return np.asarray(pub_id_holder), np.asarray(sentence_holder), \
+               np.asarray(sent_char_holder), np.asarray(tag_holder)
 
     def _load_glove_embedding(self, path):
         with open(path, 'r', encoding='utf8') as fp:
@@ -190,13 +152,6 @@ class data_processor:
         vocab_embed = word_vectors.keys()
         embed_dim = word_vectors[next(iter(vocab_embed))].shape[0]
 
-        return word_vectors, vocab_embed, embed_dim
-
-    def _load_ud_embedding(self, path):
-        from gensim.models.keyedvectors import KeyedVectors
-        word_vectors = KeyedVectors.load_word2vec_format(path, binary=True)
-        vocab_embed = word_vectors.vocab.keys()
-        embed_dim = word_vectors[next(iter(vocab_embed))].shape[0]
         return word_vectors, vocab_embed, embed_dim
 
     def _build_vocab_from_data(self, train_sents, devtest_sents):
@@ -217,25 +172,17 @@ class data_processor:
 
     @lazy_execute("_load_from_pickle")
     def _build_vocab_from_embedding(
-            self, train_sents, devtest_sents, embed_file,
-            vocab_size, char_vocab_size, file_name):
+            self, train_sents, devtest_sents, embed_file, file_name):
         self.expe.log.info("loading embedding file from {}".format(embed_file))
-        if self.expe.config.embed_type.lower() == "glove":
-            word_vectors, vocab_embed, embed_dim = \
-                self._load_glove_embedding(embed_file)
-        elif self.expe.config.embed_type.lower() == "twitter":
-            word_vectors, vocab_embed, embed_dim = \
-                self._load_twitter_embedding(embed_file)
-        else:
-            word_vectors, vocab_embed, embed_dim = \
-                self._load_ud_embedding(embed_file)
+        word_vectors, vocab_embed, embed_dim = \
+            self._load_glove_embedding(embed_file)
 
         train_char_vocab, train_vocab, devtest_vocab = \
             self._build_vocab_from_data(train_sents, devtest_sents)
 
         word_vocab = train_vocab + devtest_vocab
 
-        char_ls = train_char_vocab.most_common(char_vocab_size)
+        char_ls = train_char_vocab.most_common()
         self.expe.log.info('#Chars: {}'.format(len(char_ls)))
         for key in char_ls[:5]:
             self.expe.log.info(key)

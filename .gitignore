@@ -4,3 +4,4 @@ __pycache__
 *.csv
 glove
 .ipynb_checkpoints
+*.data

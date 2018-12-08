@@ -32,7 +32,7 @@ def get_args():
     return args
 
 
-def train_set_parser(publication_txt_path_prefix, publications_json_path, data_set_citations_json_path, output_filename):
+def train_set_parser(publication_txt_path_prefix, publications_json_path, data_set_citations_json_path, data_sets_json_path, output_filename):
     citation_dict = dict()
     print("Loading data_set_citations.json file...")
     # open the publications.json file
@@ -52,7 +52,7 @@ def train_set_parser(publication_txt_path_prefix, publications_json_path, data_s
                 words = []
                 for sentence in sentences:
                     words += word_tokenize(sentence)
-                words = [w for w in words if len(w)<20]
+                words = [w for w in words if len(w)<15]
                 if len(words) > 0:
                     formatted_mention_list.append(words)
             if publication_id in citation_dict:
@@ -89,8 +89,8 @@ def train_set_parser(publication_txt_path_prefix, publications_json_path, data_s
             sentences = split_into_sentences(raw_text)
             for sentence in sentences:
                 words = word_tokenize(sentence)
-                words = [w for w in words if len(w)<20]
-                if len(words) >= 10 and len(words) <= 50:
+                words = [w for w in words if len(w)<15]
+                if len(words) >= 10 and len(words) <= 30:
                     formatted_text_list.append(words)
             formatted_publications[publication_id] = formatted_text_list
     # tag mentions in publication text and write in csv file
@@ -116,11 +116,8 @@ def test_set_parser(publication_txt_path_prefix, publications_json_path, data_se
     data_set_mention_info = []
     pub_date_dict = dict()
     print("Loading data_sets.json file...")
-    # open the publications.json file
     with open(data_sets_json_path) as json_data_sets:
-        # parse it as JSON
         data_sets = json.load(json_data_sets)
-        # loop
         for data_set_info in tqdm(data_sets, total=len(data_sets)):
             data_set_id = data_set_info.get( "data_set_id", None )
             name = data_set_info.get( "name", None )
@@ -146,7 +143,7 @@ def test_set_parser(publication_txt_path_prefix, publications_json_path, data_se
                 words = []
                 for sentence in sentences:
                     words += word_tokenize(sentence)
-                words = [w for w in words if len(w)<20]
+                words = [w for w in words if len(w)<15]
                 if len(words) > 0:
                     formatted_mention_list.append([words, list_to_string(words)])
             data_set_mention_info.append([date, data_set_id, formatted_mention_list])
@@ -191,8 +188,8 @@ def test_set_parser(publication_txt_path_prefix, publications_json_path, data_se
             sentences = split_into_sentences(raw_text)
             for sentence in sentences:
                 words = word_tokenize(sentence)
-                words = [w for w in words if len(w)<20]
-                if len(words) >= 10 and len(words) <= 50:
+                words = [w for w in words if len(w)<15]
+                if len(words) >= 10 and len(words) <= 30:
                     formatted_text_list.append(words)
                     chopped_raw_text += ' ' + list_to_string(words)
             formatted_publications[publication_id] = [formatted_text_list, chopped_raw_text.strip()]
@@ -248,40 +245,41 @@ if __name__ == "__main__":
                         format='%(asctime)s %(message)s',
                         datefmt='%m-%d %H:%M')
     args = get_args()
-    train_set = process_file(args.train)
-    test_set = process_file(args.test)
-    test_preprocessed = process_file(args.test_preprocessed, preprocessed=True)
-    '''
-    tag_counter = Counter(sum(train_set[1], []) + sum(test_set[1], []))
-    with open("./formatted-data/rcc_tagCollection".format(args.ratio), "w+", encoding='utf-8') as fp:
-        fp.write('\n'.join(sorted(tag_counter.keys())))
-    '''
-    train_ids, dev_ids, train_sents, dev_sents, train_tags, dev_tags = \
-       train_test_split(train_set[0], train_set[1], train_set[2], test_size=args.ratio)
-    train_set = [train_ids, train_sents, train_tags]
-    dev_set = [dev_ids, dev_sents, dev_tags]
+    # train_set = process_file(args.train)
+    # test_set = process_file(args.test)
+    # test_preprocessed = process_file(args.test_preprocessed, preprocessed=True)
+    # '''
+    # tag_counter = Counter(sum(train_set[1], []) + sum(test_set[1], []))
+    # with open("./formatted-data/rcc_tagCollection".format(args.ratio), "w+", encoding='utf-8') as fp:
+    #     fp.write('\n'.join(sorted(tag_counter.keys())))
+    # '''
+    # train_ids, dev_ids, train_sents, dev_sents, train_tags, dev_tags = \
+    #    train_test_split(train_set[0], train_set[1], train_set[2], test_size=args.ratio)
+    # train_set = [train_ids, train_sents, train_tags]
+    # dev_set = [dev_ids, dev_sents, dev_tags]
 
-    tag_counter = Counter(list(itertools.chain.from_iterable(train_set[2])) +
-                          list(itertools.chain.from_iterable(dev_set[2])) +
-                          list(itertools.chain.from_iterable(test_set[2])))
-    print(tag_counter)
-    with open("./formatted-data/tagfile", "w", encoding='utf-8') as fp:
-        fp.write('\n'.join(sorted(tag_counter.keys())))
+    # tag_counter = Counter(list(itertools.chain.from_iterable(train_set[2])) +
+    #                       list(itertools.chain.from_iterable(dev_set[2])) +
+    #                       list(itertools.chain.from_iterable(test_set[2])))
+    # print(tag_counter)
+    # with open("./formatted-data/tagfile", "w", encoding='utf-8') as fp:
+    #     fp.write('\n'.join(sorted(tag_counter.keys())))
 
-    logging.info("#train data: {}".format(len(train_set[0])))
-    logging.info("#dev data: {}".format(len(dev_set[0])))
-    logging.info("#test data: {}".format(len(test_set[0])))
+    # logging.info("#train data: {}".format(len(train_set[0])))
+    # logging.info("#dev data: {}".format(len(dev_set[0])))
+    # logging.info("#test data: {}".format(len(test_set[0])))
 
-    pickle.dump(
-        [train_set, dev_set, test_set, test_preprocessed], open("./formatted-data/rcc.data".format(args.ratio), "wb+"),
-        protocol=-1)
-    # # for trainset
-    # publication_txt_path_prefix = "../data/input/files/text/"
-    # publications_json_path = "../data/input/publications.json"
-    # data_set_citations_json_path = "../data/input/data_set_citations.json"
+    # pickle.dump(
+    #     [train_set, dev_set, test_set, test_preprocessed], open("./formatted-data/rcc.data".format(args.ratio), "wb+"),
+    #     protocol=-1)
+    # for trainset
+    # publication_txt_path_prefix = "../train-data/files/text/"
+    # publications_json_path = "../train-data/publications.json"
+    # data_set_citations_json_path = "../train-data/data_set_citations.json"
+    # data_sets_json_path = '../train-data/data_sets.json'
     # output_filename = 'rcc_corpus_train.csv'
     # print("Preparing trainset")
-    # train_set_parser(publication_txt_path_prefix, publications_json_path, data_set_citations_json_path, output_filename)
+    # train_set_parser(publication_txt_path_prefix, publications_json_path, data_set_citations_json_path, data_sets_json_path, output_filename)
     # # for devset
     # publication_txt_path_prefix = "./dev_data/text/"
     # publications_json_path = "./dev_data/publications.json"
@@ -289,10 +287,9 @@ if __name__ == "__main__":
     # output_filename = 'rcc_corpus_dev_annotated.csv'
     # print("Preparing devset")
     # train_set_parser(publication_txt_path_prefix, publications_json_path, data_set_citations_json_path, output_filename)
-    # # for preprocessing devset
-    # publication_txt_path_prefix = "./dev_data/text/"
-    # publications_json_path = "./dev_data/publications.json"
-    # data_sets_json_path = '../data/input/data_sets.json'
-    # output_filename = 'rcc_corpus_dev.csv'
-    # test_set_parser(publication_txt_path_prefix, publications_json_path, data_sets_json_path, output_filename)
-
+    # for preprocessing devset
+    publication_txt_path_prefix = "../train-data/files/text/"
+    publications_json_path = "../train-data/publications.json"
+    data_sets_json_path = '../train-data/data_sets.json'
+    output_filename = 'rcc_corpus_train_by_bruteforce.csv'
+    test_set_parser(publication_txt_path_prefix, publications_json_path, data_sets_json_path, output_filename)

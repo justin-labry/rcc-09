@@ -1,0 +1,502 @@
+[
+    {
+        "publication_id": 143,
+        "method": "Data analysis skills",
+        "score": 0.752
+    },
+    {
+        "publication_id": 153,
+        "method": "Evidence-based practice",
+        "score": 0.802
+    },
+    {
+        "publication_id": 163,
+        "method": "Matrix algebra",
+        "score": 0.773
+    },
+    {
+        "publication_id": 189,
+        "method": "Access",
+        "score": 0.825
+    },
+    {
+        "publication_id": 192,
+        "method": "Recruiting participants",
+        "score": 0.824
+    },
+    {
+        "publication_id": 339,
+        "method": "Similarity measures",
+        "score": 0.914
+    },
+    {
+        "publication_id": 765,
+        "method": "Pilot studies",
+        "score": 0.951
+    },
+    {
+        "publication_id": 770,
+        "method": "Social reality",
+        "score": 0.736
+    },
+    {
+        "publication_id": 793,
+        "method": "Stakeholders",
+        "score": 0.77
+    },
+    {
+        "publication_id": 876,
+        "method": "Recruiting participants",
+        "score": 0.812
+    },
+    {
+        "publication_id": 991,
+        "method": "Recruiting participants",
+        "score": 0.723
+    },
+    {
+        "publication_id": 1067,
+        "method": "Propensity scores",
+        "score": 0.909
+    },
+    {
+        "publication_id": 1113,
+        "method": "Social reality",
+        "score": 0.585
+    },
+    {
+        "publication_id": 1134,
+        "method": "Youth-led research",
+        "score": 0.795
+    },
+    {
+        "publication_id": 1145,
+        "method": "Data analysis skills",
+        "score": 0.752
+    },
+    {
+        "publication_id": 1150,
+        "method": "Recruiting participants",
+        "score": 0.797
+    },
+    {
+        "publication_id": 1178,
+        "method": "Recruiting participants",
+        "score": 0.747
+    },
+    {
+        "publication_id": 1282,
+        "method": "Evidence-based practice",
+        "score": 0.721
+    },
+    {
+        "publication_id": 1293,
+        "method": "Research impact",
+        "score": 0.78
+    },
+    {
+        "publication_id": 1338,
+        "method": "Population parameters",
+        "score": 0.858
+    },
+    {
+        "publication_id": 1524,
+        "method": "Effect size",
+        "score": 0.915
+    },
+    {
+        "publication_id": 1575,
+        "method": "Population parameters",
+        "score": 0.791
+    },
+    {
+        "publication_id": 1665,
+        "method": "ATLAS.ti",
+        "score": 0.785
+    },
+    {
+        "publication_id": 1776,
+        "method": "Recruiting participants",
+        "score": 0.828
+    },
+    {
+        "publication_id": 1935,
+        "method": "Recruiting participants",
+        "score": 0.866
+    },
+    {
+        "publication_id": 1968,
+        "method": "Hawthorne effect",
+        "score": 0.937
+    },
+    {
+        "publication_id": 2022,
+        "method": "Oral history interviews",
+        "score": 0.739
+    },
+    {
+        "publication_id": 2119,
+        "method": "Social reality",
+        "score": 0.84
+    },
+    {
+        "publication_id": 2148,
+        "method": "Nested models",
+        "score": 0.874
+    },
+    {
+        "publication_id": 2152,
+        "method": "Key concepts in research",
+        "score": 0.833
+    },
+    {
+        "publication_id": 2241,
+        "method": "Logical empiricism",
+        "score": 0.868
+    },
+    {
+        "publication_id": 2283,
+        "method": "Jackknife methods",
+        "score": 0.951
+    },
+    {
+        "publication_id": 2328,
+        "method": "Evidence-based practice",
+        "score": 0.805
+    },
+    {
+        "publication_id": 2358,
+        "method": "Pilot studies",
+        "score": 0.935
+    },
+    {
+        "publication_id": 2541,
+        "method": "Youth-led research",
+        "score": 0.957
+    },
+    {
+        "publication_id": 2556,
+        "method": "Youth-led research",
+        "score": 0.796
+    },
+    {
+        "publication_id": 2593,
+        "method": "Recruiting participants",
+        "score": 0.863
+    },
+    {
+        "publication_id": 2683,
+        "method": "Similarity measures",
+        "score": 0.926
+    },
+    {
+        "publication_id": 2707,
+        "method": "Naturally occurring data",
+        "score": 0.936
+    },
+    {
+        "publication_id": 2819,
+        "method": "Contextual effects",
+        "score": 0.958
+    },
+    {
+        "publication_id": 2820,
+        "method": "Similarity measures",
+        "score": 0.947
+    },
+    {
+        "publication_id": 2850,
+        "method": "Coefficient of variation",
+        "score": 0.755
+    },
+    {
+        "publication_id": 2896,
+        "method": "External reliability",
+        "score": 0.771
+    },
+    {
+        "publication_id": 2906,
+        "method": "Similarity measures",
+        "score": 0.932
+    },
+    {
+        "publication_id": 2907,
+        "method": "Action science",
+        "score": 0.76
+    },
+    {
+        "publication_id": 2951,
+        "method": "Stakeholders",
+        "score": 0.753
+    },
+    {
+        "publication_id": 3025,
+        "method": "Expected frequencies",
+        "score": 0.671
+    },
+    {
+        "publication_id": 3074,
+        "method": "Recruiting participants",
+        "score": 0.778
+    },
+    {
+        "publication_id": 3118,
+        "method": "Collective behavior",
+        "score": 0.714
+    },
+    {
+        "publication_id": 3152,
+        "method": "Game theory",
+        "score": 0.954
+    },
+    {
+        "publication_id": 3163,
+        "method": "Population parameters",
+        "score": 0.792
+    },
+    {
+        "publication_id": 3164,
+        "method": "Random effects model",
+        "score": 0.902
+    },
+    {
+        "publication_id": 3165,
+        "method": "Similarity measures",
+        "score": 0.882
+    },
+    {
+        "publication_id": 3166,
+        "method": "Fixed effects model",
+        "score": 0.909
+    },
+    {
+        "publication_id": 3167,
+        "method": "Expected frequencies",
+        "score": 0.831
+    },
+    {
+        "publication_id": 3168,
+        "method": "Crisis of representation",
+        "score": 0.788
+    },
+    {
+        "publication_id": 3169,
+        "method": "Covariance structure models",
+        "score": 0.949
+    },
+    {
+        "publication_id": 3170,
+        "method": "Crisis of representation",
+        "score": 0.799
+    },
+    {
+        "publication_id": 3171,
+        "method": "Yates' correction",
+        "score": 0.795
+    },
+    {
+        "publication_id": 3172,
+        "method": "Fixed effects model",
+        "score": 0.91
+    },
+    {
+        "publication_id": 3258,
+        "method": "Naturally occurring data",
+        "score": 0.937
+    },
+    {
+        "publication_id": 3259,
+        "method": "Expected frequencies",
+        "score": 0.856
+    },
+    {
+        "publication_id": 3260,
+        "method": "Stem-and-leaf",
+        "score": 0.818
+    },
+    {
+        "publication_id": 3261,
+        "method": "Visual representations",
+        "score": 0.843
+    },
+    {
+        "publication_id": 3262,
+        "method": "Naturally occurring data",
+        "score": 0.937
+    },
+    {
+        "publication_id": 3263,
+        "method": "Collective behavior",
+        "score": 0.964
+    },
+    {
+        "publication_id": 3264,
+        "method": "Similarity measures",
+        "score": 0.82
+    },
+    {
+        "publication_id": 3265,
+        "method": "Observation schedules",
+        "score": 0.836
+    },
+    {
+        "publication_id": 3266,
+        "method": "Effect size",
+        "score": 0.898
+    },
+    {
+        "publication_id": 3267,
+        "method": "Pilot studies",
+        "score": 0.951
+    },
+    {
+        "publication_id": 3268,
+        "method": "Youth-led research",
+        "score": 0.955
+    },
+    {
+        "publication_id": 3269,
+        "method": "Pilot studies",
+        "score": 0.95
+    },
+    {
+        "publication_id": 3270,
+        "method": "Pilot studies",
+        "score": 0.946
+    },
+    {
+        "publication_id": 3271,
+        "method": "Cook's distance",
+        "score": 0.908
+    },
+    {
+        "publication_id": 3272,
+        "method": "Visual representations",
+        "score": 0.797
+    },
+    {
+        "publication_id": 3273,
+        "method": "Hawthorne effect",
+        "score": 0.937
+    },
+    {
+        "publication_id": 3274,
+        "method": "Youth-led research",
+        "score": 0.957
+    },
+    {
+        "publication_id": 3275,
+        "method": "Visual representations",
+        "score": 0.847
+    },
+    {
+        "publication_id": 3276,
+        "method": "Fisher's exact test",
+        "score": 0.966
+    },
+    {
+        "publication_id": 3277,
+        "method": "Social reality",
+        "score": 0.782
+    },
+    {
+        "publication_id": 3278,
+        "method": "Contextual effects",
+        "score": 0.954
+    },
+    {
+        "publication_id": 3279,
+        "method": "Coefficient of variation",
+        "score": 0.807
+    },
+    {
+        "publication_id": 3280,
+        "method": "Historical research",
+        "score": 0.949
+    },
+    {
+        "publication_id": 3281,
+        "method": "Coefficient of variation",
+        "score": 0.921
+    },
+    {
+        "publication_id": 3282,
+        "method": "Pilot studies",
+        "score": 0.842
+    },
+    {
+        "publication_id": 3283,
+        "method": "Literature search",
+        "score": 0.792
+    },
+    {
+        "publication_id": 3284,
+        "method": "Naturally occurring data",
+        "score": 0.942
+    },
+    {
+        "publication_id": 3285,
+        "method": "Face validity",
+        "score": 0.787
+    },
+    {
+        "publication_id": 3286,
+        "method": "Jackknife methods",
+        "score": 0.884
+    },
+    {
+        "publication_id": 3287,
+        "method": "Multiple voices",
+        "score": 0.842
+    },
+    {
+        "publication_id": 3288,
+        "method": "Crisis of representation",
+        "score": 0.835
+    },
+    {
+        "publication_id": 3289,
+        "method": "Data archives",
+        "score": 0.802
+    },
+    {
+        "publication_id": 3290,
+        "method": "Item response theory",
+        "score": 0.921
+    },
+    {
+        "publication_id": 3291,
+        "method": "Statistical control",
+        "score": 0.877
+    },
+    {
+        "publication_id": 3292,
+        "method": "Pilot studies",
+        "score": 0.95
+    },
+    {
+        "publication_id": 3293,
+        "method": "Observation schedules",
+        "score": 0.81
+    },
+    {
+        "publication_id": 3294,
+        "method": "Coefficient of variation",
+        "score": 0.775
+    },
+    {
+        "publication_id": 3295,
+        "method": "Visual representations",
+        "score": 0.77
+    },
+    {
+        "publication_id": 3296,
+        "method": "Experimental groups",
+        "score": 0.949
+    },
+    {
+        "publication_id": 3297,
+        "method": "Naturally occurring data",
+        "score": 0.935
+    }
+]

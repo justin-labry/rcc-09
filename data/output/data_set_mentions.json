@@ -1,0 +1,897 @@
+[
+    {
+        "publication_id": 143,
+        "mention": "micro level German International Trade in Services",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "ITS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "ITS MiDi",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "MiDi",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "Balance of Payments Statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 143,
+        "mention": "MiDi ITS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 153,
+        "mention": "MiDi",
+        "score": 1.0
+    },
+    {
+        "publication_id": 153,
+        "mention": "Microdatabase Direct Investment",
+        "score": 1.0
+    },
+    {
+        "publication_id": 163,
+        "mention": "International Capital Links",
+        "score": 1.0
+    },
+    {
+        "publication_id": 163,
+        "mention": "Midi",
+        "score": 1.0
+    },
+    {
+        "publication_id": 163,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 189,
+        "mention": "National Health Interview Survey ( NHIS )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 189,
+        "mention": "NHIS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 189,
+        "mention": "Health Interview Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 192,
+        "mention": "Current Population Reports",
+        "score": 1.0
+    },
+    {
+        "publication_id": 192,
+        "mention": "the CPS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 192,
+        "mention": "The Health and Retirement Study",
+        "score": 1.0
+    },
+    {
+        "publication_id": 192,
+        "mention": "NHIS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 192,
+        "mention": "Eurobarometer survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "NHANES surveys",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "National Health Interview Survey ( NHIS )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "NHIS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "Census",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "National Health and Nutrition Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "CAS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "CPS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "National Health Interview Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 765,
+        "mention": "Current Population Reports",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1113,
+        "mention": "HS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1134,
+        "mention": "NCS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1134,
+        "mention": "HS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1150,
+        "mention": "MEPS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1150,
+        "mention": "Census",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1178,
+        "mention": "third National Health and Nutrition Examination Survey , 1988 1994",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "Monitoring the Future survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "MTF",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "MTF data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "MTF survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "MTF study",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "Monitoring the Future study",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1282,
+        "mention": "Monitoring the Future",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1293,
+        "mention": "second National Health and Nutrition Examination Surveys",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1338,
+        "mention": "NHANES III",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1338,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1338,
+        "mention": "third National Health and Nutrition Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1524,
+        "mention": "National Health and Nutrition Examination Survey ( NHANES III )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1665,
+        "mention": "NHANES III",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1665,
+        "mention": "Third National Health and Nutrition Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1776,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1776,
+        "mention": "NHANES data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1776,
+        "mention": "National Health and Nutrition Examination Survey Data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1935,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1968,
+        "mention": "County",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1968,
+        "mention": "HS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2022,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2119,
+        "mention": "National Death Index ( NDI )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "NHANES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "NHANES data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "NHANES I",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "NHANES II",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "NHANES III",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "Third National Health and Nutrition Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2148,
+        "mention": "Second National Health and Nutrition Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2328,
+        "mention": "National Ambulatory Medical Care Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2541,
+        "mention": "HS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2593,
+        "mention": "CES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2593,
+        "mention": "General Social Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2593,
+        "mention": "GSS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2683,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2707,
+        "mention": "National Congregations Study",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2707,
+        "mention": "NCS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2707,
+        "mention": "NCS surveys",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2707,
+        "mention": "General Social Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2707,
+        "mention": "General Social Surveys",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "credit register",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "credit",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "balance sheet information",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "monthly balance sheet",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "CSDB",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2819,
+        "mention": "holdings data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "banks ' balance sheets",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "credit register",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "balance sheet data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "balance sheet statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "BAKIS M",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2820,
+        "mention": "MiMiK",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2850,
+        "mention": "corporate balance sheet statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2850,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2850,
+        "mention": "corporate balance sheets",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2850,
+        "mention": "Bundesbank 's corporate balance sheet database",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2850,
+        "mention": "Deutsche Bundesbank 's corporate balance sheet statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2906,
+        "mention": "Deutsche Bundesbank 's borrowers statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2906,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2907,
+        "mention": "balance sheet data",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2907,
+        "mention": "Microdatabase Direct Investment MiDi",
+        "score": 1.0
+    },
+    {
+        "publication_id": 2951,
+        "mention": "Deutsche Bundesbank 's Corporate Balance Sheet Statistics",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3025,
+        "mention": "National Health Interview Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3025,
+        "mention": "Epidemiologic Catchment Area",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3118,
+        "mention": "National Health Interview Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3118,
+        "mention": "National Health Interview Survey ( NHIS )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3118,
+        "mention": "NHIS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3118,
+        "mention": "Third National Health and Examination Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3152,
+        "mention": "YPP Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3152,
+        "mention": "YPP",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3163,
+        "mention": "CES",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3163,
+        "mention": "Supplement",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3164,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3169,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3172,
+        "mention": "time series",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3262,
+        "mention": "County",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3266,
+        "mention": "SAGE",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3269,
+        "mention": "T2",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3269,
+        "mention": "MID",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3269,
+        "mention": "NHS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3270,
+        "mention": "NSA",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3270,
+        "mention": "adolescent",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3270,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3277,
+        "mention": "SAGE",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3278,
+        "mention": "Supplement",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3279,
+        "mention": "General Social Survey , 1972",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3279,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3279,
+        "mention": "General Social Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3279,
+        "mention": "GSS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3280,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3285,
+        "mention": "SAGE",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3287,
+        "mention": "Supplement",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3287,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3289,
+        "mention": "SAGE",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3290,
+        "mention": "SAGE",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3291,
+        "mention": "SOA",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3293,
+        "mention": "Survey",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3297,
+        "mention": "the",
+        "score": 1.0
+    },
+    {
+        "publication_id": 3297,
+        "mention": "FFS",
+        "score": 1.0
+    },
+    {
+        "publication_id": 339,
+        "mention": "British",
+        "score": 0.886
+    },
+    {
+        "publication_id": 765,
+        "mention": "Americans ' Changing Lives",
+        "score": 1.0
+    },
+    {
+        "publication_id": 765,
+        "mention": "Medicare",
+        "score": 0.327
+    },
+    {
+        "publication_id": 770,
+        "mention": "National Survey of Families and Households ( NSFH )",
+        "score": 0.662
+    },
+    {
+        "publication_id": 770,
+        "mention": "National Survey of Families and Households (",
+        "score": 0.877
+    },
+    {
+        "publication_id": 770,
+        "mention": "National Survey of Families and Households",
+        "score": 0.642
+    },
+    {
+        "publication_id": 876,
+        "mention": "NHANES I",
+        "score": 0.194
+    },
+    {
+        "publication_id": 876,
+        "mention": "NHANES II",
+        "score": 0.122
+    },
+    {
+        "publication_id": 876,
+        "mention": "NHANES",
+        "score": 0.107
+    },
+    {
+        "publication_id": 876,
+        "mention": "NHANES U",
+        "score": 0.353
+    },
+    {
+        "publication_id": 876,
+        "mention": "National Health and Nutrition Examination I",
+        "score": 0.091
+    },
+    {
+        "publication_id": 991,
+        "mention": "Study of Women",
+        "score": 0.14
+    },
+    {
+        "publication_id": 991,
+        "mention": "SWAN",
+        "score": 0.142
+    },
+    {
+        "publication_id": 991,
+        "mention": "Study of Women 's Health across",
+        "score": 0.38
+    },
+    {
+        "publication_id": 991,
+        "mention": "Massachusetts",
+        "score": 0.143
+    },
+    {
+        "publication_id": 1067,
+        "mention": "ECLS",
+        "score": 0.97
+    },
+    {
+        "publication_id": 1067,
+        "mention": "ECLS K",
+        "score": 0.994
+    },
+    {
+        "publication_id": 1113,
+        "mention": "prospective National Longitudinal Study of Adolescent Health ( Add Health )",
+        "score": 1.0
+    },
+    {
+        "publication_id": 1113,
+        "mention": "Add Health",
+        "score": 0.795
+    },
+    {
+        "publication_id": 1113,
+        "mention": "National Longitudinal Study of Adolescent Health ;",
+        "score": 0.992
+    },
+    {
+        "publication_id": 1113,
+        "mention": "National Longitudinal Study of Adolescent Health",
+        "score": 0.949
+    },
+    {
+        "publication_id": 1134,
+        "mention": "National",
+        "score": 0.075
+    },
+    {
+        "publication_id": 1134,
+        "mention": "British",
+        "score": 0.872
+    },
+    {
+        "publication_id": 1145,
+        "mention": "National Survey",
+        "score": 0.081
+    },
+    {
+        "publication_id": 1145,
+        "mention": "National",
+        "score": 0.09
+    },
+    {
+        "publication_id": 1178,
+        "mention": "NICHD",
+        "score": 0.358
+    },
+    {
+        "publication_id": 1293,
+        "mention": "EPESE",
+        "score": 0.399
+    },
+    {
+        "publication_id": 1524,
+        "mention": "National Social Life , Health , and Aging Project ( NSHAP )",
+        "score": 0.655
+    },
+    {
+        "publication_id": 2022,
+        "mention": "Bogalusa",
+        "score": 0.151
+    },
+    {
+        "publication_id": 2283,
+        "mention": "DHS",
+        "score": 0.03
+    },
+    {
+        "publication_id": 2358,
+        "mention": "Maternal",
+        "score": 0.082
+    },
+    {
+        "publication_id": 2358,
+        "mention": "National",
+        "score": 0.047
+    },
+    {
+        "publication_id": 2593,
+        "mention": "NSHAP",
+        "score": 0.204
+    },
+    {
+        "publication_id": 2593,
+        "mention": "National Social Life , Health , and Aging Project",
+        "score": 0.709
+    },
+    {
+        "publication_id": 2683,
+        "mention": "WHO",
+        "score": 0.25
+    },
+    {
+        "publication_id": 2820,
+        "mention": "credit",
+        "score": 0.393
+    },
+    {
+        "publication_id": 2820,
+        "mention": "monthly",
+        "score": 0.125
+    },
+    {
+        "publication_id": 2906,
+        "mention": "loan",
+        "score": 0.362
+    },
+    {
+        "publication_id": 3025,
+        "mention": "NCS",
+        "score": 0.432
+    },
+    {
+        "publication_id": 3025,
+        "mention": "National Comorbidity Survey",
+        "score": 0.875
+    },
+    {
+        "publication_id": 3025,
+        "mention": "National",
+        "score": 0.101
+    },
+    {
+        "publication_id": 3118,
+        "mention": "National Death",
+        "score": 0.273
+    },
+    {
+        "publication_id": 3258,
+        "mention": "National Postsecondary",
+        "score": 0.106
+    }
+]

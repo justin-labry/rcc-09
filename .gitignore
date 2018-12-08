@@ -10,3 +10,9 @@ tagfile
 vocab
 *.local
 saveFile
+.idea
+*.pkl
+*.out
+datsetIds
+options.json
+*.hdf5

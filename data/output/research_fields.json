@@ -1,0 +1,502 @@
+[
+    {
+        "publication_id": 143,
+        "research_field": "Counseling Supervision",
+        "score": 0.633
+    },
+    {
+        "publication_id": 153,
+        "research_field": "Working with Police, Welfare & Social Services in Education",
+        "score": 0.655
+    },
+    {
+        "publication_id": 163,
+        "research_field": "Action Research/Practitioner Inquiry in Education",
+        "score": 0.664
+    },
+    {
+        "publication_id": 189,
+        "research_field": "Health Risk Assessment",
+        "score": 0.738
+    },
+    {
+        "publication_id": 192,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.719
+    },
+    {
+        "publication_id": 339,
+        "research_field": "Public Health",
+        "score": 0.675
+    },
+    {
+        "publication_id": 765,
+        "research_field": "Social Work Skills",
+        "score": 0.804
+    },
+    {
+        "publication_id": 770,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.72
+    },
+    {
+        "publication_id": 793,
+        "research_field": "Public Health Communication",
+        "score": 0.765
+    },
+    {
+        "publication_id": 876,
+        "research_field": "Health Risk Assessment",
+        "score": 0.758
+    },
+    {
+        "publication_id": 991,
+        "research_field": "Age & the Life Course",
+        "score": 0.746
+    },
+    {
+        "publication_id": 1067,
+        "research_field": "Education",
+        "score": 0.814
+    },
+    {
+        "publication_id": 1113,
+        "research_field": "Gifted & Talented Education",
+        "score": 0.642
+    },
+    {
+        "publication_id": 1134,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.618
+    },
+    {
+        "publication_id": 1145,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.691
+    },
+    {
+        "publication_id": 1150,
+        "research_field": "Health Risk Assessment",
+        "score": 0.734
+    },
+    {
+        "publication_id": 1178,
+        "research_field": "Health Risk Assessment",
+        "score": 0.69
+    },
+    {
+        "publication_id": 1282,
+        "research_field": "Higher Education",
+        "score": 0.708
+    },
+    {
+        "publication_id": 1293,
+        "research_field": "Research Methods for Health & Social Care",
+        "score": 0.735
+    },
+    {
+        "publication_id": 1338,
+        "research_field": "Education",
+        "score": 0.785
+    },
+    {
+        "publication_id": 1524,
+        "research_field": "Sociology",
+        "score": 0.794
+    },
+    {
+        "publication_id": 1575,
+        "research_field": "Behaviorist Theories of Learning",
+        "score": 0.596
+    },
+    {
+        "publication_id": 1665,
+        "research_field": "Social Work Practice",
+        "score": 0.795
+    },
+    {
+        "publication_id": 1776,
+        "research_field": "Physical & Occupational Therapy & Rehabilitation",
+        "score": 0.716
+    },
+    {
+        "publication_id": 1935,
+        "research_field": "Resources for Parents of Students",
+        "score": 0.593
+    },
+    {
+        "publication_id": 1968,
+        "research_field": "Health Risk Assessment",
+        "score": 0.757
+    },
+    {
+        "publication_id": 2022,
+        "research_field": "Research Ethics in Education",
+        "score": 0.681
+    },
+    {
+        "publication_id": 2119,
+        "research_field": "Social Interaction & Everyday Life (general)",
+        "score": 0.817
+    },
+    {
+        "publication_id": 2148,
+        "research_field": "Public Health",
+        "score": 0.746
+    },
+    {
+        "publication_id": 2152,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.697
+    },
+    {
+        "publication_id": 2241,
+        "research_field": "Goal-setting in Counseling",
+        "score": 0.705
+    },
+    {
+        "publication_id": 2283,
+        "research_field": "Health Risk Assessment",
+        "score": 0.695
+    },
+    {
+        "publication_id": 2328,
+        "research_field": "Education",
+        "score": 0.775
+    },
+    {
+        "publication_id": 2358,
+        "research_field": "Child Advocacy",
+        "score": 0.63
+    },
+    {
+        "publication_id": 2541,
+        "research_field": "Research Methods for Health & Social Care",
+        "score": 0.777
+    },
+    {
+        "publication_id": 2556,
+        "research_field": "Sociology",
+        "score": 0.793
+    },
+    {
+        "publication_id": 2593,
+        "research_field": "Social Work Administration",
+        "score": 0.752
+    },
+    {
+        "publication_id": 2683,
+        "research_field": "Physician Assistant",
+        "score": 0.688
+    },
+    {
+        "publication_id": 2707,
+        "research_field": "Gifted & Talented Education",
+        "score": 0.689
+    },
+    {
+        "publication_id": 2819,
+        "research_field": "Quantitative Methods in Geography",
+        "score": 0.631
+    },
+    {
+        "publication_id": 2820,
+        "research_field": "Educational Leadership",
+        "score": 0.644
+    },
+    {
+        "publication_id": 2850,
+        "research_field": "Higher Education",
+        "score": 0.7
+    },
+    {
+        "publication_id": 2896,
+        "research_field": "International Security",
+        "score": 0.757
+    },
+    {
+        "publication_id": 2906,
+        "research_field": "Populations & Samples in Psychology",
+        "score": 0.611
+    },
+    {
+        "publication_id": 2907,
+        "research_field": "Sociology",
+        "score": 0.776
+    },
+    {
+        "publication_id": 2951,
+        "research_field": "Goal-setting in Counseling",
+        "score": 0.666
+    },
+    {
+        "publication_id": 3025,
+        "research_field": "Professional Learning Communities",
+        "score": 0.583
+    },
+    {
+        "publication_id": 3074,
+        "research_field": "Counseling Older People",
+        "score": 0.658
+    },
+    {
+        "publication_id": 3118,
+        "research_field": "Health Risk Assessment",
+        "score": 0.753
+    },
+    {
+        "publication_id": 3152,
+        "research_field": "Political Theory",
+        "score": 0.803
+    },
+    {
+        "publication_id": 3163,
+        "research_field": "Parent & Family Involvement in Education",
+        "score": 0.607
+    },
+    {
+        "publication_id": 3164,
+        "research_field": "Teacher Resources",
+        "score": 0.632
+    },
+    {
+        "publication_id": 3165,
+        "research_field": "Higher Education",
+        "score": 0.7
+    },
+    {
+        "publication_id": 3166,
+        "research_field": "Watershed Management",
+        "score": 0.628
+    },
+    {
+        "publication_id": 3167,
+        "research_field": "Teacher Resources",
+        "score": 0.647
+    },
+    {
+        "publication_id": 3168,
+        "research_field": "Conservation",
+        "score": 0.629
+    },
+    {
+        "publication_id": 3169,
+        "research_field": "Postmodern Theories of Learning",
+        "score": 0.694
+    },
+    {
+        "publication_id": 3170,
+        "research_field": "Personal Grown & Development Resources for Teachers",
+        "score": 0.671
+    },
+    {
+        "publication_id": 3171,
+        "research_field": "Democratization",
+        "score": 0.66
+    },
+    {
+        "publication_id": 3172,
+        "research_field": "Gestalt Therapy",
+        "score": 0.654
+    },
+    {
+        "publication_id": 3258,
+        "research_field": "Counseling Skills",
+        "score": 0.728
+    },
+    {
+        "publication_id": 3259,
+        "research_field": "Open-ended Questions in Counseling",
+        "score": 0.644
+    },
+    {
+        "publication_id": 3260,
+        "research_field": "Teacher Resources",
+        "score": 0.812
+    },
+    {
+        "publication_id": 3261,
+        "research_field": "Goal-setting in Counseling",
+        "score": 0.644
+    },
+    {
+        "publication_id": 3262,
+        "research_field": "ICT in Higher Education",
+        "score": 0.622
+    },
+    {
+        "publication_id": 3263,
+        "research_field": "Biological/Physiological Psychology",
+        "score": 0.75
+    },
+    {
+        "publication_id": 3264,
+        "research_field": "Goal-setting in Counseling",
+        "score": 0.671
+    },
+    {
+        "publication_id": 3265,
+        "research_field": "Media Law & Ethics",
+        "score": 0.69
+    },
+    {
+        "publication_id": 3266,
+        "research_field": "Public Health (Clinical Psychology)",
+        "score": 0.606
+    },
+    {
+        "publication_id": 3267,
+        "research_field": "Social Stratification & Class",
+        "score": 0.598
+    },
+    {
+        "publication_id": 3268,
+        "research_field": "Research Methods for Geography",
+        "score": 0.745
+    },
+    {
+        "publication_id": 3269,
+        "research_field": "Marx, Durkheim & Weber",
+        "score": 0.685
+    },
+    {
+        "publication_id": 3270,
+        "research_field": "Research Methods in Psychology",
+        "score": 0.748
+    },
+    {
+        "publication_id": 3271,
+        "research_field": "Conflict",
+        "score": 0.598
+    },
+    {
+        "publication_id": 3272,
+        "research_field": "Higher Education",
+        "score": 0.655
+    },
+    {
+        "publication_id": 3273,
+        "research_field": "Radiological & Imaging Technologies",
+        "score": 0.639
+    },
+    {
+        "publication_id": 3274,
+        "research_field": "Research Ethics for Sociology",
+        "score": 0.679
+    },
+    {
+        "publication_id": 3275,
+        "research_field": "Social Psychology",
+        "score": 0.795
+    },
+    {
+        "publication_id": 3276,
+        "research_field": "Research Methods for Counseling & Psychotherapy",
+        "score": 0.648
+    },
+    {
+        "publication_id": 3277,
+        "research_field": "Counseling Skills",
+        "score": 0.687
+    },
+    {
+        "publication_id": 3278,
+        "research_field": "Interest Groups",
+        "score": 0.578
+    },
+    {
+        "publication_id": 3279,
+        "research_field": "Research Methods for Politics & International Relations",
+        "score": 0.762
+    },
+    {
+        "publication_id": 3280,
+        "research_field": "Research Ethics in Education",
+        "score": 0.687
+    },
+    {
+        "publication_id": 3281,
+        "research_field": "Reflective Practice in Counseling",
+        "score": 0.622
+    },
+    {
+        "publication_id": 3282,
+        "research_field": "Research Ethics in Education",
+        "score": 0.697
+    },
+    {
+        "publication_id": 3283,
+        "research_field": "Research Methods for Counseling & Psychotherapy",
+        "score": 0.763
+    },
+    {
+        "publication_id": 3284,
+        "research_field": "Professional Issues in Counseling",
+        "score": 0.698
+    },
+    {
+        "publication_id": 3285,
+        "research_field": "Secondary Education",
+        "score": 0.818
+    },
+    {
+        "publication_id": 3286,
+        "research_field": "Digital Methods",
+        "score": 0.572
+    },
+    {
+        "publication_id": 3287,
+        "research_field": "Learning Theories",
+        "score": 0.685
+    },
+    {
+        "publication_id": 3288,
+        "research_field": "Cognitive Neuropsychology",
+        "score": 0.77
+    },
+    {
+        "publication_id": 3289,
+        "research_field": "International Conflict",
+        "score": 0.743
+    },
+    {
+        "publication_id": 3290,
+        "research_field": "Constructivist & Social Theories of Learning",
+        "score": 0.692
+    },
+    {
+        "publication_id": 3291,
+        "research_field": "Reflective Practice in Counseling",
+        "score": 0.646
+    },
+    {
+        "publication_id": 3292,
+        "research_field": "Social Psychology",
+        "score": 0.694
+    },
+    {
+        "publication_id": 3293,
+        "research_field": "Coaching in Counseling",
+        "score": 0.724
+    },
+    {
+        "publication_id": 3294,
+        "research_field": "Research Methods for Counseling & Psychotherapy",
+        "score": 0.753
+    },
+    {
+        "publication_id": 3295,
+        "research_field": "Early Years Placements",
+        "score": 0.671
+    },
+    {
+        "publication_id": 3296,
+        "research_field": "International Development",
+        "score": 0.702
+    },
+    {
+        "publication_id": 3297,
+        "research_field": "Data Collection & Analysis in Education",
+        "score": 0.741
+    }
+]

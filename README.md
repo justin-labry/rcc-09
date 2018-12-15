@@ -16,3 +16,6 @@ The ELMo vector will be released upon request by other means (too large to be up
 
 Forbidden
 
+4. running
+
+from ./project/ directory, python3 ./code.sh
